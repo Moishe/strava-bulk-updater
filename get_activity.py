@@ -1,6 +1,5 @@
 import hashlib
 import json
-from pprint import pprint
 import requests
 
 from os import path
@@ -29,7 +28,7 @@ while True:
         break
 
     for activity in activities:
-        if activity["type"] == 'EBikeRide' and activity["gear_id"] == 'b7096971':
+        if activity["type"] == 'EBikeRide': # and activity["gear_id"] == 'b7096971':
             print(activity["name"], activity["type"], activity["gear_id"], activity["start_date"])
             activity_url = "https://www.strava.com/api/v3/activities/%d" % activity['id']
             if False:
@@ -40,6 +39,6 @@ while True:
                 'gear_id': 'b8233285'
             }
             headers = {"Authorization": "Bearer %s" % secrets["access_token"]}
-            result = requests.put(activity_url, data=data, headers=headers)
+            #result = requests.put(activity_url, data=data, headers=headers)
 
     page += 1
