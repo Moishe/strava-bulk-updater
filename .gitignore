@@ -1,0 +1,8 @@
+key.py
+secrets.json
+*~
+cache/*
+env/*
+dist/*
+generated/*
+__pycache__/*
